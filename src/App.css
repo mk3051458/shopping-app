@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding : 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1100px;
+  margin : 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap : 1.5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container .card {
+  width: 100%;
+  height : 100%;
+  background-color: white;
+  border : 1px solid #f4f4f4;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  box-shadow: 0px 0px 2px 0px #eee;
+  border-radius: 5px;
+  transition: all .5s ease-in-out;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.container .card h3 { 
+  text-align: center; 
+  padding: 1rem;
+  /* background-color: #E0EDF6; */
+  text-transform: uppercase;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container .card .img {
+  display: block;
+  /* margin: 2rem 0; */
+  /* align-self: center; */
+  max-width : 100%;
+  border : 1rem solid white;
+  background-color: white;
+  max-height: 225px;
+  /* height : auto; */
+}
+.container .card:hover button {
+  display : block;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border : 5px solid rgb(26, 26, 231)
+}
+.container .card:hover button:hover {
+  background-color: #0d47db
+}
+.container .card:hover {
+  transform: scale(1.1);
+  /* box-shadow: none; */
+  border : none
+}
+.container .card button {
+ display: none;
+ background : rgb(26, 26, 231);
+ color : white;
+ padding: 1rem;
+ box-sizing: content-box;
+ margin-bottom: 0px;
+}
+@media (max-width : 840px){
+  .container{
+      max-width: 750px;
+     
+      grid-template-columns: repeat(3, 1fr);
   }
-  to {
-    transform: rotate(360deg);
+}
+@media (max-width : 720px){
+  .container{
+      max-width: 600px;
+      
+      grid-template-columns: repeat(2, 1fr);
   }
+}
+@media (max-width : 500px){
+  .container{
+      max-width: 300px;
+   
+      grid-template-columns: 1fr;
+  }
+}
+.navbar {
+  background-color: #f4f4f4;
+  position : fixed;
+  top : 0;
+  left : 0;
+  width : 100%;
+  z-index: 1;
+}
+.navbar nav {
+  max-width: 1100px;
+  margin :auto;
+  padding : 1rem;
+  
+  display: flex;
+}
+.navbar nav a {
+  flex : 1;
+  align-self: center;
+  color : black;
+  text-decoration: none;
 }
